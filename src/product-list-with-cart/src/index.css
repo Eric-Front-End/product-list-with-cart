@@ -1,0 +1,48 @@
+/* Global styles for the product list with cart application */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #343a40;
+}
+
+h1 {
+  color: #007bff;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.my-6 {
+  margin: 1.5rem 0;
+}
+
+.desktop\:flex {
+  display: flex;
+}
+
+.desktop\:gap-8 {
+  gap: 2rem;
+}
+
+.desktop\:items-start {
+  align-items: flex-start;
+}
+
+.text-\[2\.5rem\] {
+  font-size: 2.5rem;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.mb-\[30px\] {
+  margin-bottom: 30px;
+}
