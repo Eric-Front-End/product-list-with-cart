@@ -1,5 +1,5 @@
 {
-  "homepage": "https://eric-front-end.github.io/product-list-with-cart",
+  "homepage": "https://Eric-Front-End.github.io/product-list-with-cart",
   "name": "product-list-with-cart",
   "private": true,
   "version": "0.0.0",
@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.16",
