@@ -1,43 +1,27 @@
 import { create } from 'zustand';
-import data from '../../data.json';
+import data from '../../data.json'
 
-/*const dataWithQuantity = data.map( (item) => ({
-  ...item, 
-  quantity:0,
-}));
-*/
-export const useCartStore = create( ( set, get )=>({
-  
+export const useCartStore = create((set, get)=>({
+
   isClose: true,
   cart: [],
-  products: data, 
+  products: data,
 
-
-
-  toggleClose: (  )=>set ( ( state )=> ({
-    isClose: !state.isClose,
+  toggleClose: ()=>set((state)=>({
+    isClose: !state.isClose
   })),
-
-  resetCart: ()=> set( () =>({
-    cart:[],
+  resetCart: ()=>set(()=>({
+    cart:[]
   })),
-
-  addItemCart: ( newItem )=> set ( ( state )=>({
-    cart: [...state.cart, newItem],
-  })),  
-
-  updateItemInCart: ( updateItem )=> set ( ( state )=> ({
-    cart: state.cart.map (item => {
-      item.name == updateItem.name ? {...updateItem} : {item}
-    })
+  addItemToCart: (newItem)=>set((state)=>({
+    cart: [...state.cart, newItem]
   })),
-
-  deleteItemFromCart: ( name )=> set ( (state)=> ({
-    cart: state.cart.filter( item => item.name !== name ),
+  updateItemInCart: (updateItem)=>set((state)=>({
+    cart: state.cart.map(item=> item.name === updateItem.name ? {...updateItem}: item)
   })),
+  deleteItemfromCart: (name)=>set((state)=>({
+    cart: state.cart.filter(item=>item.name !== name)
+  })),
+  totalCard: () => get().cart.reduce((acc, item)=> acc + (item.quantity * item.price), 0)
 
-  totalCart: ()=> get().cart.reduce( (acc, item)=> acc + (item.quantity*item.price), 0),
-
-
-
-}) )
+}))
